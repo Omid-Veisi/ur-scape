@@ -1,0 +1,24 @@
+import numpy as np
+from numpy.random import uniform, seed
+import matplotlib.pyplot as plt
+from random import sample
+from copy import deepcopy 
+from time import sleep, time
+import pandas as pd
+from random import sample, choice, shuffle, gauss
+from math import cos, pi
+from copy import deepcopy
+
+
+def cost(x):
+    x[0] *= 180
+    df = pd.DataFrame(data=x, columns=['vars'])
+    df.to_csv('variables.csv')
+    
+    sleep(1)
+    
+    cost = pd.read_csv('from_grasshopper.csv')
+    
+    return cost['cost'][0]
+    
+    
